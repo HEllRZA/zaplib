@@ -37,6 +37,7 @@ class CloudBuildAPI(object):
 		result['platform'] = b['platform']
 		result['finish_date'] = b.get('finished', '')
 		result['totalTimeInSeconds'] = b.get('totalTimeInSeconds', 0)
+		result['download'] = b.get("links",{}).get("download_primary",{}).get("href","")
 
 		return result
 
